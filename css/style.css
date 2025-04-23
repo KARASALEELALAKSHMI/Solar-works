@@ -1420,3 +1420,236 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
       content: "\f095"; }
     .site-footer ul.quick-info li.address:before {
       content: "\e8b4"; }
+
+/* ===== General Reset and Font Setup ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== Hero Section ===== */
+.hero-section {
+  text-align: center;
+  background: linear-gradient(to right, #003366, #005599);
+  color: white;
+  padding: 100px 20px;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ===== Main Service Section (without background image) ===== */
+.main-service-section {
+  background: none;
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+}
+
+.main-service-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.main-service-section p {
+  font-size: 1.2rem;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+/* ===== Sub-Service Section ===== */
+.sub-services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* Increased gap between the boxes */
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+/* ===== Service Card Styles ===== */
+.service-card {
+  position: relative;
+  flex: 1 1 250px; /* Flexible width */
+  max-width: 250px; /* Max width for each card */
+  height: 350px;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: calc(var(--i) * 0.1s); /* Staggered entry */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  margin: 10px; /* Adding a little margin to create gap */
+}
+
+/* Fade-in Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover Effect */
+.service-card:hover {
+  transform: translateY(0) scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Image */
+.service-card-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-card-img {
+  transform: scale(1.1);
+}
+
+/* Text Overlay */
+.card-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.service-card:hover .card-content {
+  opacity: 1;
+  transform: translateY(0);
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.card-content h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .service-card {
+    max-width: calc(33.33% - 40px); /* 3 cards per row with increased gap */
+  }
+}
+
+@media (max-width: 768px) {
+  .service-card {
+    max-width: calc(50% - 40px); /* 2 cards per row with increased gap */
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card {
+    max-width: 100%; /* Full width for small screens */
+    margin-bottom: 20px;
+  }
+}
+
+/* ===== Features Section - Auto Scrolling ===== */
+.features-scroll-wrapper {
+  overflow: hidden; /* Hide scrollbar */
+  width: 100%;
+  position: relative;
+  padding: 20px 0;
+}
+
+.features-scroll {
+  display: inline-flex;
+  gap: 30px;
+  animation: scrollFeatures 20s linear infinite;
+  will-change: transform;
+}
+
+.features-scroll:hover {
+  animation-play-state: paused; /* Pause on hover */
+}
+
+.feature-item {
+  flex: 0 0 auto;
+  width: 300px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.feature-icon img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.feature-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.feature-description {
+  font-size: 1rem;
+  color: #777;
+  line-height: 1.5;
+}
+
+/* Auto scroll animation using content width */
+@keyframes scrollFeatures {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-300px * 6 - 30px * 5)); /* total width - gap */
+  }
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .features-scroll {
+    animation: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .feature-item {
+    scroll-snap-align: start;
+    min-width: 280px;
+  }
+}
+
+
+
+/* Custom color for Pvt. Ltd. */
+.pvt-ltd {
+  color: #F1F1F1;
+}
