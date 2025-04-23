@@ -1472,7 +1472,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px; /* Increased gap between the boxes */
+  gap: 30px;
   padding: 60px 20px;
   background-color: #f9f9f9;
 }
@@ -1480,36 +1480,35 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 /* ===== Service Card Styles ===== */
 .service-card {
   position: relative;
-  flex: 1 1 250px; /* Flexible width */
-  max-width: 250px; /* Max width for each card */
+  flex: 1 1 250px;
+  max-width: 250px;
   height: 350px;
   overflow: hidden;
   border-radius: 20px;
   background-color: #fff;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   opacity: 0;
-  transform: translateY(50px);
-  animation: fadeInUp 0.8s ease forwards;
-  animation-delay: calc(var(--i) * 0.1s); /* Staggered entry */
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  margin: 10px; /* Adding a little margin to create gap */
+  transform: scale(0.9) translateY(60px);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  margin: 10px;
+  will-change: transform, opacity;
 }
 
-/* Fade-in Animation */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Reveal when in view */
+.service-card.in-view {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Collapse when out of view (for reappear effect) */
+.service-card.out-of-view {
+  opacity: 0;
+  transform: scale(0.9) translateY(60px);
 }
 
 /* Hover Effect */
 .service-card:hover {
-  transform: translateY(0) scale(1.05);
+  transform: scale(1.05) translateY(0);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
@@ -1559,40 +1558,44 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
   .service-card {
-    max-width: calc(33.33% - 40px); /* 3 cards per row with increased gap */
+    max-width: calc(33.33% - 40px);
   }
 }
 
 @media (max-width: 768px) {
   .service-card {
-    max-width: calc(50% - 40px); /* 2 cards per row with increased gap */
+    max-width: calc(50% - 40px);
   }
 }
 
 @media (max-width: 480px) {
   .service-card {
-    max-width: 100%; /* Full width for small screens */
+    max-width: 100%;
     margin-bottom: 20px;
   }
 }
 
-/* ===== Features Section - Auto Scrolling ===== */
+
+/* ===== Features Section - Horizontal Auto Scroll with Pause on Hover ===== */
 .features-scroll-wrapper {
-  overflow: hidden; /* Hide scrollbar */
-  width: 100%;
   position: relative;
-  padding: 20px 0;
+  overflow: hidden;
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .features-scroll {
-  display: inline-flex;
+  display: flex;
   gap: 30px;
-  animation: scrollFeatures 20s linear infinite;
+  animation: autoScroll 0s linear infinite;
   will-change: transform;
 }
 
 .features-scroll:hover {
-  animation-play-state: paused; /* Pause on hover */
+  animation-play-state: paused; /* Pause the animation when hovered */
 }
 
 .feature-item {
@@ -1600,9 +1603,14 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   width: 300px;
   background: #fff;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
 .feature-icon img {
@@ -1612,9 +1620,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 
 .feature-title {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .feature-description {
@@ -1623,27 +1631,30 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   line-height: 1.5;
 }
 
-/* Auto scroll animation using content width */
-@keyframes scrollFeatures {
+/* Keyframes for smooth scrolling */
+@keyframes autoScroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-300px * 6 - 30px * 5)); /* total width - gap */
+    transform: translateX(calc(-300px * 6 - 30px * 5)); /* Adjust based on your content width */
   }
 }
 
-/* Responsive Fixes */
+/* Mobile Adjustments for Scroll */
 @media (max-width: 768px) {
-  .features-scroll {
-    animation: none;
-    overflow-x: auto;
+  .features-scroll-wrapper {
+    overflow-x: auto; /* Allow horizontal scroll on mobile */
     scroll-snap-type: x mandatory;
   }
 
+  .features-scroll {
+    gap: 20px;
+  }
+
   .feature-item {
+    min-width: 250px;
     scroll-snap-align: start;
-    min-width: 280px;
   }
 }
 
