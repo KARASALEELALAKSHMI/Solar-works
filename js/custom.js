@@ -279,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const featuresScroll = document.querySelector('.features-scroll');
   
 	// Set custom speed for auto-scrolling
-	const scrollSpeed = 30; // Adjust the speed (in seconds)
+	const scrollSpeed = 10; // Adjust the speed (in seconds)
   
 	// Create a function to update the animation speed dynamically
 	const updateScrollSpeed = (speed) => {
