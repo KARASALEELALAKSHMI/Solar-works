@@ -250,3 +250,28 @@ $(function(){
 		$('input[name="daterange"]').daterangepicker();
 	}
 })
+
+document.addEventListener('DOMContentLoaded', function () {
+	const serviceCards = document.querySelectorAll('.service-card');
+  
+	// Create an intersection observer
+	const observer = new IntersectionObserver((entries, observer) => {
+	  entries.forEach(entry => {
+		if (entry.isIntersecting) {
+		  // Add the 'in-view' class to trigger the animation when in view
+		  entry.target.classList.add('in-view');
+		  // Stop observing this card once it's in view
+		  observer.unobserve(entry.target);
+		}
+	  });
+	}, {
+	  threshold: 0.8 // Trigger when 80% of the card is in view
+	});
+  
+	// Observe each service card
+	serviceCards.forEach(card => {
+	  observer.observe(card);
+	});
+  });
+  
+  
