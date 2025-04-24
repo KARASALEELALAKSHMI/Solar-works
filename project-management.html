@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="css/style.css">  <!-- Linking the external CSS file for styling -->
 
    <!-- Page title -->
-  <title>Dropdown</title>
+  <title>Services</title>
 </head>
 
 <body>
@@ -52,19 +52,7 @@
 
         <ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-right">
           <li class="active"><a href="index.html">Home</a></li>
-          <li class="has-children">
-            <!-- Main Services Menu Item -->
-            <a href="services.html">services</a>
-          
-            <!-- Dropdown Items for Sub-Services -->
-            <ul class="dropdown">
-              <li><a href="End-to-End Rooftop Installation.html">End-to-End Rooftop Installation</a></li>
-              <li><a href="customized-solutions.html">Customized Energy Solutions</a></li>
-              <li><a href="project-management.html">Project Management & Support</a></li>
-              <li><a href="maintenance-monitoring.html">Maintenance & Monitoring</a></li>
-            </ul>
-          </li>
-
+          <li><a href="services.html">Services</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact Us</a></li>
@@ -79,10 +67,19 @@
   </nav>
 
 
-<!-- ===== Hero Section with Background Image ===== -->
-<section class="hero-section" style="background: url('images/Project-Management-Support-bg.jpg') center center / cover no-repeat;">
-  <h1>Project Management & Support</h1>
-  <p>End-to-end coordination, compliance, and client success tracking.</p>
+<!-- ===== Hero Section with Background Image and Breadcrumb ===== -->
+<section class="hero-section text-center text-white" style="background: url('images/Project-Management-Support-bg.jpg') center center / cover no-repeat; padding: 100px 0; position: relative;">
+  <div class="container position-relative">
+    <h1 class="display-4">Project Management & Support</h1>
+    <p class="lead">End-to-end coordination, compliance, and client success tracking.</p>
+    <nav class="breadcrumbs d-inline-block mt-3">
+      <ol class="list-inline mb-0">
+        <li class="list-inline-item"><a href="index.html" style="color: darkorange;">Home</a></li>
+        <li class="list-inline-item text-white"> / </li>
+        <li class="list-inline-item text-white"><a href="services.html" style="color: white;">Our Services</a></li>
+      </ol>
+    </nav>
+  </div>
 </section>
 
 <!-- ===== Main Service Banner without Background Image ===== -->

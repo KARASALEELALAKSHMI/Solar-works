@@ -1658,3 +1658,33 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   }
 }
 
+/* ===== Breadcrumbs container styling ===== */
+.page-title {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.page-title h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.page-title p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.breadcrumbs ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.breadcrumbs li.current {
+  color: white;
+  font-weight: 600;
+}
+
