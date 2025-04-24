@@ -1,9 +1,3 @@
-<!-- /*
-* Template Name: Tour
-* Template Author: Untree.co
-* Tempalte URI: https://untree.co/
-* License: https://creativecommons.org/licenses/by/3.0/
-*/ -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -33,8 +27,6 @@
 </head>
 
 <body>
-
-
 	<div class="site-mobile-menu site-navbar-target">
 		<div class="site-mobile-menu-header">
 			<div class="site-mobile-menu-close">
@@ -52,11 +44,13 @@
 				<ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-right">
 					<li class="active"><a href="index.html">Home</a></li>
 					<li class="has-children">
-						<a href="#">Dropdown</a>
+						<a href="services.html">Services</a>
 						<ul class="dropdown">
-							<li><a href="elements.html">Elements</a></li>
-							<li><a href="#">Menu One</a></li>
-							<li class="has-children">
+							<li><a href="customized-solutions.html">Customized-Solutions</a></li>
+							<li><a href="maintenance-monitoring.html">Panel-Monitoring</a></li>
+							<li><a href="project-management.html">Project-Management</a></li>
+							<li><a href="rooftop-installation.html">Rooftop-Installation</a></li>
+							<!--<li class="has-children">
 								<a href="#">Menu Two</a>
 								<ul class="dropdown">
 									<li><a href="#">Sub Menu One</a></li>
@@ -64,10 +58,10 @@
 									<li><a href="#">Sub Menu Three</a></li>
 								</ul>
 							</li>
-							<li><a href="#">Menu Three</a></li>
+							<li><a href="#">Menu Three</a></li>-->
 						</ul>
 					</li>
-					<li><a href="services.html">Services</a></li>
+					<li><a href="#projects">Projects</a></li>
 					<li><a href="about.html">About</a></li>
 					<li><a href="contact.html">Contact Us</a></li>
 				</ul>
@@ -82,11 +76,17 @@
 
 
 	<div class="hero">
+		<video autoplay muted loop playsinline class="hero-bg-video">
+			<source src="images\Home.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+		  </video>
+		  <div class="hero-overlay"></div>
+		  
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-lg-7">
 					<div class="intro-wrap">
-						<h1 class="mb-5"><span class="d-block">We Provide You With</span><span class="typed-words"></span></h1>
+						<h1 class="mb-5 mt-5"><span class="d-block">We Provide You With</span><span class="typed-words"></span></h1>
 
 						<!--<div class="row">
 							<div class="col-12">
@@ -142,66 +142,84 @@
 			</div>
 		</div>
 	</div>
-
-
-	<div class="untree_co-section">
-		<div class="container">
-			<div class="row mb-5 justify-content-center">
-				<div class="col-lg-6 text-center">
-					<h2 class="section-title text-center mb-3">Our Services</h2>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-				</div>
-			</div>
-			<div class="row align-items-stretch">
-				<div class="col-lg-4 order-lg-1">
-					<div class="h-100"><div class="frame h-100"><div class="feature-img-bg h-100" style="background-image: url('images/hero-slider-1.jpg');"></div></div></div>
-				</div>
-
-				<div class="col-6 col-sm-6 col-lg-4 feature-1-wrap d-md-flex flex-md-column order-lg-1" >
-
-					<div class="feature-1 d-md-flex">
-						<div class="align-self-center">
-							<span class="flaticon-house display-4 text-primary"></span>
-							<h3>Beautiful Condo</h3>
-							<p class="mb-0">Even the all-powerful Pointing has no control about the blind texts.</p>
-						</div>
-					</div>
-
-					<div class="feature-1 ">
-						<div class="align-self-center">
-							<span class="flaticon-restaurant display-4 text-primary"></span>
-							<h3>Restaurants & Cafe</h3>
-							<p class="mb-0">Even the all-powerful Pointing has no control about the blind texts.</p>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="col-6 col-sm-6 col-lg-4 feature-1-wrap d-md-flex flex-md-column order-lg-3" >
-
-					<div class="feature-1 d-md-flex">
-						<div class="align-self-center">
-							<span class="flaticon-mail display-4 text-primary"></span>
-							<h3>Easy to Connect</h3>
-							<p class="mb-0">Even the all-powerful Pointing has no control about the blind texts.</p>
-						</div>
-					</div>
-
-					<div class="feature-1 d-md-flex">
-						<div class="align-self-center">
-							<span class="flaticon-phone-call display-4 text-primary"></span>
-							<h3>24/7 Support</h3>
-							<p class="mb-0">Even the all-powerful Pointing has no control about the blind texts.</p>
-						</div>
-					</div>
-
-				</div>
-
-			</div>
-		</div>
 	</div>
 
-	<div class="untree_co-section count-numbers py-5">
+
+	<div class="untree_co-section py-5 bg-white">
+		<div class="container">
+		  <div class="row mb-5 justify-content-center">
+			<div class="col-lg-6 text-center">
+			  <h2 class="section-title text-center mb-3">Our Services</h2>
+			  <p class="text-muted">Explore the wide range of solar services we provide, combining technology, sustainability, and expert craftsmanship.</p>
+			</div>
+		  </div>
+		  <div class="container">
+			<div class="row">
+			  <!-- Card 1 -->
+			  <div class="col-md-6 col-lg-4 mb-4">
+				<a href="customized-solutions.html" class="text-decoration-none">
+				  <div class="card h-100 shadow rounded-4 border-0 hover-shadow">
+					<img src="images\Solar serv.png" class="card-img-top rounded-top-4" alt="Rooftop Solar">
+					<div class="card-body">
+					  <h5 class="card-title fw-bold text-dark">Customized Solutions</h5>
+					  <p class="card-text text-muted">
+						Custom-designed panels that match your lifestyle.
+					  </p>
+					</div>
+				  </div>
+				</a>
+			  </div>
+		  
+			  <!-- Card 2 -->
+			  <div class="col-md-6 col-lg-4 mb-4">
+				<a href="project-management.html" class="text-decoration-none">
+				  <div class="card h-100 shadow rounded-4 border-0 hover-shadow">
+					<img src="images\hs.jpg" class="card-img-top rounded-top-4" alt="Project Management">
+					<div class="card-body">
+					  <h5 class="card-title fw-bold text-dark">Project Management Services</h5>
+					  <p class="card-text text-muted">
+						We handle planning, permits, and installation—so you don’t have to.
+					  </p>
+					</div>
+				  </div>
+				</a>
+			  </div>
+		  
+			  <!-- Card 3 -->
+			  <div class="col-md-6 col-lg-4 mb-4">
+				<a href="maintenance-monitoring.html" class="text-decoration-none">
+				  <div class="card h-100 shadow rounded-4 border-0 hover-shadow">
+					<img src="images\hs2.png" class="card-img-top rounded-top-4" alt="Consulting">
+					<div class="card-body">
+					  <h5 class="card-title fw-bold text-dark">Panel Monitoring</h5>
+					  <p class="card-text text-muted">
+						24/7 checks keep your panels healthy and working at their best.
+					  </p>
+					</div>
+				  </div>
+				</a>
+			  </div>
+
+			  <div class="col-md-6 col-lg-4 mb-4">
+				<a href="rooftop-installation.html" class="text-decoration-none">
+				  <div class="card h-100 shadow rounded-4 border-0 hover-shadow">
+					<img src="images\hb.png" class="card-img-top rounded-top-4" alt="Consulting">
+					<div class="card-body">
+					  <h5 class="card-title fw-bold text-dark">Rooftop Installation</h5>
+					  <p class="card-text text-muted">
+						Safe, neat rooftop setup that converts sunlight into power.
+					  </p>
+					</div>
+				  </div>
+				</a>
+			  </div>
+
+			</div>
+		  </div>
+</div>		  
+	  
+
+	<!--<div class="untree_co-section count-numbers py-5">
 		<div class="container">
 			<div class="row">
 				<div class="col-6 col-sm-6 col-md-6 col-lg-3">
@@ -238,86 +256,65 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>-->
 
 
 
-	<div class="untree_co-section">
+	<div id="projects">
 		<div class="container">
 			<div class="row text-center justify-content-center mb-5">
-				<div class="col-lg-7"><h2 class="section-title text-center">Popular Destination</h2></div>
+				<div class="col-lg-7">
+					<h2 class="section-title text-center">Projects</h2>
+				</div>
 			</div>
-
+	
 			<div class="owl-carousel owl-3-slider">
-
+	
 				<div class="item">
-					<a class="media-thumb" href="images/hero-slider-1.jpg" data-fancybox="gallery">
+					<a class="media-thumb" href="images\sl1.mp4" data-fancybox="gallery">
 						<div class="media-text">
-							<h3>Pragser Wildsee</h3>
-							<span class="location">Italy</span>
+							<h3>Solar Installation</h3>
+							<span class="location">Vijayawada</span>
 						</div>
-						<img src="images/hero-slider-1.jpg" alt="Image" class="img-fluid">
+						<video class="img-fluid" controls>
+							<source src="images\sl1.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
 					</a> 
 				</div>
-
+	
 				<div class="item">
-					<a class="media-thumb" href="images/hero-slider-2.jpg" data-fancybox="gallery">
+					<a class="media-thumb" href="images\sl2.mp4" data-fancybox="gallery">
 						<div class="media-text">
-							<h3>Oia</h3>
-							<span class="location">Greece</span>
+							<h3>Solar Installation</h3>
+							<span class="location">Visakhapatnam</span>
 						</div>
-						<img src="images/hero-slider-2.jpg" alt="Image" class="img-fluid">
+						<video class="img-fluid" controls>
+							<source src="images\sl2.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
 					</a> 
 				</div>
-
+	
 				<div class="item">
-					<a class="media-thumb" href="images/hero-slider-3.jpg" data-fancybox="gallery">
+					<a class="media-thumb" href="images\sl3.mp4" data-fancybox="gallery">
 						<div class="media-text">
-							<h3>Perhentian Islands</h3>
-							<span class="location">Malaysia</span>
+							<h3>Rooftop Installation</h3>
+							<span class="location">Vizianagaram</span>
 						</div>
-						<img src="images/hero-slider-3.jpg" alt="Image" class="img-fluid">
+						<video class="img-fluid" controls>
+							<source src="images\sl3.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
 					</a> 
 				</div>
-
-
-				<div class="item">
-					<a class="media-thumb" href="images/hero-slider-4.jpg" data-fancybox="gallery">
-						<div class="media-text">
-							<h3>Rialto Bridge</h3>
-							<span class="location">Italy</span>
-						</div>
-						<img src="images/hero-slider-4.jpg" alt="Image" class="img-fluid">
-					</a> 
-				</div>
-
-				<div class="item">
-					<a class="media-thumb" href="images/hero-slider-5.jpg" data-fancybox="gallery">
-						<div class="media-text">
-							<h3>San Francisco, United States</h3>
-							<span class="location">United States</span>
-						</div>
-						<img src="images/hero-slider-5.jpg" alt="Image" class="img-fluid">
-					</a> 
-				</div>
-
-				<div class="item">
-					<a class="media-thumb" href="images/hero-slider-1.jpg" data-fancybox="gallery">
-						<div class="media-text">
-							<h3>Lake Thun</h3>
-							<span class="location">Switzerland</span>
-						</div>
-						<img src="images/hero-slider-2.jpg" alt="Image" class="img-fluid">
-					</a> 
-				</div>
-
 			</div>
-
+	
 		</div>
 	</div>
+	
 
-
-	<div class="untree_co-section testimonial-section mt-5">
+	<!--<div class="untree_co-section testimonial-section mt-5">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-lg-7 text-center">
@@ -359,7 +356,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>-->
 
 
 		<!-- <div class="container">	<div class="untree_co-section"> -->
@@ -453,7 +450,7 @@
 		</div>
 	</div> -->
 
-	<div class="untree_co-section">
+	<!--<div class="untree_co-section">
 		<div class="container">
 			<div class="row justify-content-between align-items-center">
 				
@@ -505,10 +502,11 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>-->
 
 	<div class="site-footer">
 		<div class="inner first">
+<<<<<<< HEAD
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-lg-4">
@@ -560,25 +558,77 @@
 							</ul>																		
 						</div>
 					</div>
+=======
+		  <div class="container">
+			<div class="row">
+			  <div class="col-md-6 col-lg-4">
+				<div class="widget">
+				  <h3 class="heading">About VoltEco Dynamics</h3>
+				  <p>Voteco Dynamics delivers reliable rooftop solar solutions, combining smart design and quality installation for lasting energy savings.</p>
+>>>>>>> cbdc174a2424e1c2d676c9a89ff55a631a4f96d6
 				</div>
+				<div class="widget">
+				  <ul class="list-unstyled social">
+					<li><a href="#"><span class="icon-twitter"></span></a></li>
+					<li><a href="#"><span class="icon-instagram"></span></a></li>
+					<li><a href="#"><span class="icon-facebook"></span></a></li>
+					<li><a href="#"><span class="icon-linkedin"></span></a></li>
+					<li><a href="#"><span class="icon-dribbble"></span></a></li>
+					<li><a href="#"><span class="icon-pinterest"></span></a></li>
+					<li><a href="#"><span class="icon-apple"></span></a></li>
+					<li><a href="#"><span class="icon-google"></span></a></li>
+				  </ul>
+				</div>
+			  </div>
+			  <div class="col-md-6 col-lg-2 pl-lg-5">
+				<div class="widget">
+				  <h3 class="heading">Pages</h3>
+				  <ul class="links list-unstyled">
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				  </ul>
+				</div>
+			  </div>
+			  <div class="col-md-6 col-lg-2">
+				<div class="widget">
+				  <h3 class="heading">Resources</h3>
+				  <ul class="links list-unstyled">
+					<li><a href="#">Solar Installation Guide</a></li>
+					<li><a href="#">Benefits of Solar Energy</a></li>
+					<li><a href="#">Solar Energy Financing Options</a></li>
+				  </ul>
+				</div>
+			  </div>
+			  <div class="col-md-6 col-lg-4">
+				<div class="widget">
+				  <h3 class="heading">Contact</h3>
+				  <ul class="list-unstyled quick-info links">
+					<li class="email"><a href="#">mail@example.com</a></li>
+					<li class="phone"><a href="#">+1 222 212 3819</a></li>
+					<li class="address"><a href="#">D. No. 26/994-1, <br>MITTAMADI 2nd STREET, <br>PRODDATUR, YSR DIST-516360</a></li>
+				  </ul>
+				</div>
+			  </div>
 			</div>
+		  </div>
 		</div>
-
-
-
+	  
+	  
+	  
 		<div class="inner dark">
-			<div class="container">
-				<div class="row text-center">
-					<div class="col-md-8 mb-3 mb-md-0 mx-auto">
-						<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co" class="link-highlight">Untree.co</a> <!-- License information: https://untree.co/license/ -->Distributed By <a href="https://themewagon.com" target="_blank" >ThemeWagon</a>
-						</p>
-					</div>
-					
-				</div>
+		  <div class="container">
+			<div class="row text-center">
+			  <div class="col-md-8 mb-3 mb-md-0 mx-auto">
+				<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved.
+				</p>
+			  </div>
+			  
 			</div>
+		  </div>
 		</div>
-	</div>
-
+	  </div>
+	  
 	<div id="overlayer"></div>
 	<div class="loader">
 		<div class="spinner-border" role="status">
@@ -601,7 +651,7 @@
 	<script>
 		$(function() {
 			var slides = $('.slides'),
-			images = slides.find('img');
+			images = slides.find('img');z
 
 			images.each(function(i) {
 				$(this).attr('data-id', i + 1);

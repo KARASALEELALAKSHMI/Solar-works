@@ -728,6 +728,42 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
       font-weight: 400;
       font-size: 16px;
       top: -7px; }
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.hero-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 0.5 = 50% black */
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
 
 .owl-3-slider .owl-nav {
   position: absolute;
@@ -1384,3 +1420,241 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
       content: "\f095"; }
     .site-footer ul.quick-info li.address:before {
       content: "\e8b4"; }
+
+/* ===== General Reset and Font Setup ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== Hero Section ===== */
+.hero-section {
+  text-align: center;
+  background: linear-gradient(to right, #003366, #005599);
+  color: white;
+  padding: 100px 20px;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ===== Main Service Section (without background image) ===== */
+.main-service-section {
+  background: none;
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+}
+
+.main-service-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.main-service-section p {
+  font-size: 1.2rem;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+/* ===== Sub-Service Section ===== */
+.sub-services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+/* ===== Service Card Styles ===== */
+.service-card {
+  position: relative;
+  flex: 1 1 250px;
+  max-width: 250px;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: scale(0.9) translateY(60px);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  margin: 10px;
+  will-change: transform, opacity;
+}
+
+/* Reveal when in view */
+.service-card.in-view {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Collapse when out of view (for reappear effect) */
+.service-card.out-of-view {
+  opacity: 0;
+  transform: scale(0.9) translateY(60px);
+}
+
+/* Hover Effect */
+.service-card:hover {
+  transform: scale(1.05) translateY(0);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Image */
+.service-card-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-card-img {
+  transform: scale(1.1);
+}
+
+/* Text Overlay */
+.card-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.service-card:hover .card-content {
+  opacity: 1;
+  transform: translateY(0);
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.card-content h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .service-card {
+    max-width: calc(33.33% - 40px);
+  }
+}
+
+@media (max-width: 768px) {
+  .service-card {
+    max-width: calc(50% - 40px);
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+
+/* ===== Features Section - Horizontal Auto Scroll with Pause on Hover ===== */
+.features-scroll-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.features-scroll {
+  display: flex;
+  gap: 30px;
+  animation: autoScroll 0s linear infinite;
+  will-change: transform;
+}
+
+.features-scroll:hover {
+  animation-play-state: paused; /* Pause the animation when hovered */
+}
+
+.feature-item {
+  flex: 0 0 auto;
+  width: 300px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.0s ease;
+}
+
+.feature-item:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.feature-icon img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.feature-description {
+  font-size: 1rem;
+  color: #777;
+  line-height: 1.5;
+}
+
+/* Keyframes for smooth scrolling */
+@keyframes autoScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-300px * 6 - 30px * 5)); /* Adjust based on your content width */
+  }
+}
+
+/* Mobile Adjustments for Scroll */
+@media (max-width: 768px) {
+  .features-scroll-wrapper {
+    overflow-x: auto; /* Allow horizontal scroll on mobile */
+    scroll-snap-type: x mandatory;
+  }
+
+  .features-scroll {
+    gap: 20px;
+  }
+
+  .feature-item {
+    min-width: 250px;
+    scroll-snap-align: start;
+  }
+}
+

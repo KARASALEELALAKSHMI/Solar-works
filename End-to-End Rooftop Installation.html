@@ -1,0 +1,312 @@
+<!-- /*
+* Template Name: Tour
+* Template Author: Untree.co
+* Tempalte URI: https://untree.co/
+* License: https://creativecommons.org/licenses/by/3.0/
+*/ -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">  <!-- Meta charset for proper text encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">   <!-- Meta tag for responsive design, scaling the page on different devices -->
+  <meta name="author" content="Untree.co">
+  <link rel="shortcut icon" href="favicon.png">
+
+  <meta name="description" content="" />
+  <meta name="keywords" content="bootstrap, bootstrap4" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="css/daterangepicker.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/style.css">  <!-- Linking the external CSS file for styling -->
+
+   <!-- Page title -->
+  <title>Dropdown</title>
+</head>
+
+<body>
+
+
+  <div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close">
+        <span class="icofont-close js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>
+
+  <nav class="site-nav">
+    <div class="container">
+      <div class="site-navigation">
+        <a href="index.html" class="logo m-0">VoltEco Dynamics</a>
+
+        <ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-right">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li class="has-children">
+            <!-- Main Services Menu Item -->
+            <a href="services.html">services</a>
+          
+            <!-- Dropdown Items for Sub-Services -->
+            <ul class="dropdown">
+              <li><a href="End-to-End Rooftop Installation.html">End-to-End Rooftop Installation</a></li>
+              <li><a href="customized-solutions.html">Customized Energy Solutions</a></li>
+              <li><a href="project-management.html">Project Management & Support</a></li>
+              <li><a href="maintenance-monitoring.html">Maintenance & Monitoring</a></li>
+            </ul>
+          </li>
+          
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+
+        <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
+          <span></span>
+        </a>
+
+      </div>
+    </div>
+  </nav>
+
+
+<!-- ===== Hero Section with Background Image ===== -->
+<section class="hero-section" style="background: url('images/End-to-End-Rooftop-bg.jpeg') center center / cover no-repeat;">
+  <h1>End-to-End Rooftop Installation</h1>
+  <p>Seamless solar integration from design to execution</p>
+</section>
+
+<!-- ===== Main Service Banner without Background Image ===== -->
+<section class="main-service-banner py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Our Specialized Rooftop Services</h2>
+      <p class="text-muted">
+        We provide expert rooftop solar installations, offering end-to-end services from design to installation and maintenance. Our solutions are tailored to maximize energy efficiency and optimize your rooftop space.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Sub-Services Grid ===== -->
+<section class="sub-services py-5">
+  <div class="container d-flex flex-wrap justify-content-center gap-4">
+
+    <div class="service-card" style="--i: 1;">
+      <img src="images/solar-roofscape.webp" alt="Solar RoofScape Installation" class="service-card-img" />
+      <div class="card-content">
+        <h3>Solar RoofScape Installation</h3>
+        <p>Elegant solar roofing from aesthetic design to energy optimization.</p>
+      </div>
+    </div>
+
+    <div class="service-card" style="--i: 2;">
+      <img src="images/rooftop-complete.jpg" alt="Rooftop Solar Complete" class="service-card-img" />
+      <div class="card-content">
+        <h3>Rooftop Solar Complete</h3>
+        <p>Turnkey rooftop solar installation from start to finish.</p>
+      </div>
+    </div>
+
+    <div class="service-card" style="--i: 3;">
+      <img src="images/skyline-solar.jpg" alt="Skyline Solar Installation" class="service-card-img" />
+      <div class="card-content">
+        <h3>Skyline Solar Installation</h3>
+        <p>Solar solutions designed to complement your building skyline.</p>
+      </div>
+    </div>
+
+    <div class="service-card" style="--i: 4;">
+      <img src="images/ecotop-install.jpg" alt="EcoTop Install Pro" class="service-card-img" />
+      <div class="card-content">
+        <h3>EcoTop Install Pro</h3>
+        <p>Eco-conscious rooftop installations with pro-grade engineering.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Features Section with Auto-Scrolling -->
+<section class="features-section" style="padding: 60px 20px; background-color: #f4f4f4;">
+  <div class="container">
+    <h2 class="section-title text-center">Our Rooftop Installation Features</h2>
+    <div class="features-scroll-wrapper">
+      <div class="features-scroll">
+        <!-- Feature 1 -->
+        <div class="feature-item">
+          <div class="feature-icon">
+            <img src="images/Site-Evaluation-IC5.png" alt="Thorough Site Assessment">
+          </div>
+          <h3 class="feature-title">Thorough Site Assessment</h3>
+          <p class="feature-description">Detailed site surveys to plan efficient and safe rooftop solar setups.</p>
+        </div>
+        <!-- Feature 2 -->
+        <div class="feature-item">
+          <div class="feature-icon">
+            <img src="images/Customizable-Solar-IC2.png" alt="Tailored System Design">
+          </div>
+          <h3 class="feature-title">Tailored System Design</h3>
+          <p class="feature-description">Custom system layouts crafted to suit your specific rooftop and energy needs.</p>
+        </div>
+        <!-- Feature 3 -->
+        <div class="feature-item">
+          <div class="feature-icon">
+            <img src="images/Seamless-Installation-IC1.png" alt="End-to-End Execution">
+          </div>
+          <h3 class="feature-title">End-to-End Execution</h3>
+          <p class="feature-description">Complete handling from procurement to commissioning, ensuring a smooth install.</p>
+        </div>
+        <!-- Feature 4 -->
+        <div class="feature-item">
+          <div class="feature-icon">
+            <img src="images/Installation-Support-IC6.png" alt="Post-Install Support">
+          </div>
+          <h3 class="feature-title">Post-Install Support</h3>
+          <p class="feature-description">Maintenance, inspections, and performance tracking for long-term success.</p>
+        </div>
+        <!-- Feature 5 -->
+        <div class="feature-item">
+          <div class="feature-icon">
+            <img src="images/Certified-Professionals-IC3.jpg" alt="Expert Installation Team">
+          </div>
+          <h3 class="feature-title">Expert Installation Team</h3>
+          <p class="feature-description">Certified technicians ensuring quality, safety, and compliance throughout.</p>
+        </div>
+        <!-- Feature 6 -->
+        <div class="feature-item">
+          <div class="feature-icon">
+            <img src="images/Advanced-Solar-IC4.webp" alt="High-Quality Equipment">
+          </div>
+          <h3 class="feature-title">High-Quality Equipment</h3>
+          <p class="feature-description">Top-tier solar panels and inverters selected for durability and performance.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Optional: Initialize AOS (Animate on Scroll) if you're using it -->
+<script src="js/aos.js"></script>
+<script>
+AOS.init(); // Start AOS animations
+</script>
+
+ <!-- Call to Action Section -->
+<div class="py-5 cta-section" style="background-color: #003366;">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-12">
+        <h2 class="mb-2 text-white">Explore Sustainable Energy Solutions. Contact Us Now</h2>
+        <p class="mb-4 lead text-white">We specialize in end-to-end rooftop solar installations, custom energy solutions, and efficient solar management. Let us help you harness the power of the sun!</p>
+        <p class="mb-0"><a href="contact.html" class="btn btn-outline-white text-white btn-md font-weight-bold">Get in Touch</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="site-footer">
+  <div class="inner first">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-4">
+          <div class="widget">
+            <h3 class="heading">About VoltEco Dynamics</h3>
+            <p>Voteco Dynamics delivers reliable rooftop solar solutions, combining smart design and quality installation for lasting energy savings.</p>
+          </div>
+          <div class="widget">
+            <ul class="list-unstyled social">
+              <li><a href="#"><span class="icon-twitter"></span></a></li>
+              <li><a href="#"><span class="icon-instagram"></span></a></li>
+              <li><a href="#"><span class="icon-facebook"></span></a></li>
+              <li><a href="#"><span class="icon-linkedin"></span></a></li>
+              <li><a href="#"><span class="icon-dribbble"></span></a></li>
+              <li><a href="#"><span class="icon-pinterest"></span></a></li>
+              <li><a href="#"><span class="icon-apple"></span></a></li>
+              <li><a href="#"><span class="icon-google"></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2 pl-lg-5">
+          <div class="widget">
+            <h3 class="heading">Pages</h3>
+            <ul class="links list-unstyled">
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2">
+          <div class="widget">
+            <h3 class="heading">Resources</h3>
+            <ul class="links list-unstyled">
+              <li><a href="#">Solar Installation Guide</a></li>
+              <li><a href="#">Benefits of Solar Energy</a></li>
+              <li><a href="#">Solar Energy Financing Options</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="widget">
+            <h3 class="heading">Contact</h3>
+            <ul class="list-unstyled quick-info links">
+              <li class="email"><a href="#">mail@example.com</a></li>
+              <li class="phone"><a href="#">+1 222 212 3819</a></li>
+              <li class="address"><a href="#">D. No. 26/994-1, <br>MITTAMADI 2nd STREET, <br>PRODDATUR, YSR DIST-516360</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="inner dark">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-8 mb-3 mb-md-0 mx-auto">
+          <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co" class="link-highlight">Untree.co</a> <!-- License information: https://untree.co/license/ --> Distributed By <a href="https://themewagon.com" target="_blank" >ThemeWagon</a>
+          </p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="overlayer"></div>
+<div class="loader">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.animateNumber.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/daterangepicker.js"></script>
+
+<script src="js/typed.js"></script>
+
+<script src="js/custom.js"></script>
+
+</body>
+
+</html>

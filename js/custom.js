@@ -250,3 +250,53 @@ $(function(){
 		$('input[name="daterange"]').daterangepicker();
 	}
 })
+
+// Wait until the full HTML document has been loaded before running the script
+document.addEventListener('DOMContentLoaded', function () {
+	const serviceCards = document.querySelectorAll('.service-card');
+  
+	// Create an Intersection Observer to watch the visibility of each card
+	const observer = new IntersectionObserver((entries, observer) => {
+	  entries.forEach(entry => {
+		// If the card is in the viewport, add the 'in-view' class to trigger animation
+		if (entry.isIntersecting) {
+		  entry.target.classList.add('in-view');
+		} else {
+		  // If the card is out of the viewport, remove the 'in-view' class
+		  entry.target.classList.remove('in-view');
+		}
+	  });
+	}, {
+	  threshold: 0.5 // Trigger when 50% of the card is visible in the viewport
+	});
+  
+	// Observe each service card
+	serviceCards.forEach(card => observer.observe(card));
+  });
+
+  // Ensure the DOM is fully loaded before running any script logic to safely access HTML elements
+  document.addEventListener('DOMContentLoaded', function () {
+	const featuresScroll = document.querySelector('.features-scroll');
+  
+	// Set custom speed for auto-scrolling
+	const scrollSpeed = 10; // Adjust the speed (in seconds)
+  
+	// Create a function to update the animation speed dynamically
+	const updateScrollSpeed = (speed) => {
+	  featuresScroll.style.animationDuration = `${speed}s`;
+	};
+  
+	// Event listener to pause scrolling when the user hovers over the section
+	featuresScroll.addEventListener('mouseover', function() {
+	  featuresScroll.style.animationPlayState = 'paused';
+	});
+  
+	// Event listener to resume scrolling when the user stops hovering
+	featuresScroll.addEventListener('mouseout', function() {
+	  featuresScroll.style.animationPlayState = 'running';
+	});
+  
+	// Call the function to set the initial scroll speed
+	updateScrollSpeed(scrollSpeed);
+  });
+  
