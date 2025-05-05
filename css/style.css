@@ -1501,32 +1501,44 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     .site-footer ul.quick-info li.address:before {
       content: "\e8b4"; }
 
-/* ===== General Reset and Font Setup ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* ===== Hero Section ===== */
+/* ===== Hero Section Styles ===== */
 .hero-section {
+  position: relative;
   text-align: center;
-  background: linear-gradient(to right, #003366, #005599);
   color: white;
-  padding: 100px 20px;
 }
 
-.hero-section h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+.hero-box {
+  background-color: rgba(0, 0, 0, 0.5);  /* Transparent black box */
+  padding: 40px;
+  border-radius: 10px;
+  display: inline-block;
 }
 
-.hero-section p {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0 auto;
+.hero-box h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
 }
+
+.hero-box .highlight {
+  color: #ff9800;  /* Color for the highlighted keyword */
+}
+
+.hero-box p {
+  font-size: 1.25rem;
+  font-weight: normal;
+  color: white;
+}
+
+.breadcrumbs a {
+  color: darkorange;
+}
+
+.breadcrumbs .current {
+  color: white;
+}
+
 
 /* ===== Main Service Section (without background image) ===== */
 .main-service-section {
