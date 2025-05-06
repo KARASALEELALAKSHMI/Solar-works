@@ -810,6 +810,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   opacity: 1;
   visibility: visible; }
 
+  
 .title-with-bg {
   font-size: 50px;
   color: #ffffff;
@@ -1524,7 +1525,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 
 .hero-box .highlight {
-  color: #ff9800;  /* Color for the highlighted keyword */
+  color: #54a4f9;  /* Color for the highlighted keyword */
 }
 
 .hero-box p {
@@ -1534,7 +1535,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 
 .breadcrumbs a {
-  color: darkorange;
+  color: #54a4f9;
 }
 
 .breadcrumbs .current {
