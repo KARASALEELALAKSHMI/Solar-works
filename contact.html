@@ -318,18 +318,28 @@
               if (hasError) return;
         
               // Send email using EmailJS
-              emailjs.send("service_gncucea", "template_8bg6s34", {
-                name: name,
-                email: email,
-                phone: phone,
-                message: message,
-              }).then(() => {
-                showMessage("Message sent successfully!", "success");
-                form.reset();
-              }).catch((error) => {
-                console.error("Email sending failed:", error);
-                showMessage("Failed to send message. Try again later.", "error");
-              });
+              const submitButton = form.querySelector("button[type='submit']");
+submitButton.disabled = true;
+submitButton.textContent = "Sending...";
+
+// Send email using EmailJS
+emailjs.send("service_gncucea", "template_8bg6s34", {
+  name: name,
+  email: email,
+  phone: phone,
+  message: message,
+}).then(() => {
+  showMessage("Thanks for filling out the form. We will get back to you soon!", "success");
+  form.reset();
+  submitButton.disabled = false;
+  submitButton.textContent = "Send Message";
+}).catch((error) => {
+  console.error("Email sending failed:", error);
+  showMessage("Failed to send message. Try again later.", "error");
+  submitButton.disabled = false;
+  submitButton.textContent = "Send Message";
+});
+
             });
         
             // Function to show the popup message
@@ -355,8 +365,7 @@
               transform: translateX(-50%);
               padding: 10px 20px;
               border-radius: 5px;
-              color: white;
-              font-weight: bold;
+              color: rgb(248, 245, 245);
               z-index: 1000;
               opacity: 0.9;
               text-align: center;
@@ -364,7 +373,7 @@
             }
         
             .popup-message.success {
-              background-color: #4CAF50;
+              background-color: #037cfc;
             }
         
             .popup-message.error {
@@ -483,7 +492,7 @@
       <div class="container">
         <div class="row text-center">
           <div class="col-md-8 mb-3 mb-md-0 mx-auto">
-            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>Volteco Dynamics Private Limited. All Rights Reserved. 
+            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> Volteco Dynamics Private Limited. All Rights Reserved. 
             </p>
           </div>
           
