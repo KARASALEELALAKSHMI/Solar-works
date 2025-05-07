@@ -251,91 +251,128 @@
           <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
           <script>
             (function () {
-              emailjs.init("j00B-U_HLizjYTdjn"); // Replace with your EmailJS user ID
+              emailjs.init("9pJ0vo3MERTDImBZg"); // Replace with your EmailJS user ID
             })();
           </script>
-        </head>
-        <body>
         
-        <form id="contactForm" novalidate>
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-          <div id="nameError" class="error"></div>
+          <form id="contactForm" novalidate>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            <div id="nameError" class="error"></div>
         
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email" required>
-          <div id="emailError" class="error"></div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <div id="emailError" class="error"></div>
         
-          <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-          <div id="phoneError" class="error"></div>
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+            <div id="phoneError" class="error"></div>
         
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
-          <div id="messageError" class="error"></div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+            <div id="messageError" class="error"></div>
         
-          <button type="submit">Send Message</button>
-        </form>
+            <button type="submit">Send Message</button>
+          </form>
         
-        <script>
-          const form = document.getElementById("contactForm");
+          <script>
+            const form = document.getElementById("contactForm");
         
-          form.addEventListener("submit", function (e) {
-            e.preventDefault();
+            form.addEventListener("submit", function (e) {
+              e.preventDefault();
         
-            // Clear previous errors
-            document.querySelectorAll(".error").forEach(el => el.textContent = "");
+              // Clear previous errors
+              document.querySelectorAll(".error").forEach(el => el.textContent = "");
         
-            let hasError = false;
+              let hasError = false;
         
-            const name = form.name.value.trim();
-            const email = form.email.value.trim();
-            const phone = form.phone.value.trim();
-            const message = form.message.value.trim();
+              const name = form.name.value.trim();
+              const email = form.email.value.trim();
+              const phone = form.phone.value.trim();
+              const message = form.message.value.trim();
         
-            const namePattern = /^[A-Za-z\s]{3,}$/;
-            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-            const phonePattern = /^[6-9]\d{9}$/;
+              const namePattern = /^[A-Za-z\s]{3,}$/;
+              const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+              const phonePattern = /^[6-9]\d{9}$/;
         
-            if (!namePattern.test(name)) {
-              document.getElementById("nameError").textContent = "Name must be at least 3 letters and contain only alphabets.";
-              hasError = true;
-            }
+              if (!namePattern.test(name)) {
+                document.getElementById("nameError").textContent = "Name must be at least 3 letters and contain only alphabets.";
+                hasError = true;
+              }
         
-            if (!emailPattern.test(email)) {
-              document.getElementById("emailError").textContent = "Please enter a valid email address.";
-              hasError = true;
-            }
+              if (!emailPattern.test(email)) {
+                document.getElementById("emailError").textContent = "Please enter a valid email address.";
+                hasError = true;
+              }
         
-            if (phone && !phonePattern.test(phone)) {
-              document.getElementById("phoneError").textContent = "Phone number must be 10 digits starting with 6-9.";
-              hasError = true;
-            }
+              if (phone && !phonePattern.test(phone)) {
+                document.getElementById("phoneError").textContent = "Phone number must be 10 digits starting with 6-9.";
+                hasError = true;
+              }
         
-            if (message.length < 1) {
-              document.getElementById("messageError").textContent = "Please enter a message.";
-              hasError = true;
-            }
+              if (message.length < 1) {
+                document.getElementById("messageError").textContent = "Please enter a message.";
+                hasError = true;
+              }
         
-            if (hasError) return;
+              if (hasError) return;
         
-            // Send email using EmailJS
-            emailjs.send("service_f2ze4o7", "template_u8nng7r", {
-              name: name,
-              email: email,
-              phone: phone,
-              message: message,
-            }).then(() => {
-              alert("Message sent successfully!");
-              form.reset();
-            }).catch((error) => {
-              console.error("Email sending failed:", error);
-              alert("Failed to send message. Try again later.");
+              // Send email using EmailJS
+              emailjs.send("service_gncucea", "template_8bg6s34", {
+                name: name,
+                email: email,
+                phone: phone,
+                message: message,
+              }).then(() => {
+                showMessage("Message sent successfully!", "success");
+                form.reset();
+              }).catch((error) => {
+                console.error("Email sending failed:", error);
+                showMessage("Failed to send message. Try again later.", "error");
+              });
             });
-          });
-        </script>
-
+        
+            // Function to show the popup message
+            function showMessage(message, type) {
+              const messageBox = document.createElement("div");
+              messageBox.textContent = message;
+              messageBox.classList.add("popup-message", type);
+        
+              document.body.appendChild(messageBox);
+        
+              // Remove the message box after 4 seconds
+              setTimeout(() => {
+                messageBox.remove();
+              }, 4000);
+            }
+          </script>
+        
+          <style>
+            .popup-message {
+              position: fixed;
+              top: 10px;
+              left: 50%;
+              transform: translateX(-50%);
+              padding: 10px 20px;
+              border-radius: 5px;
+              color: white;
+              font-weight: bold;
+              z-index: 1000;
+              opacity: 0.9;
+              text-align: center;
+              width: 300px;
+            }
+        
+            .popup-message.success {
+              background-color: #4CAF50;
+            }
+        
+            .popup-message.error {
+              background-color: #f44336;
+            }
+          </style>
         </div>
+        
 
         <div class="contact-info">
           <h3>Contact Information</h3>
