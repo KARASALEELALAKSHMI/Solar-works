@@ -159,19 +159,18 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   .logo:hover {
     color: #ffffff; }
 
-    .site-nav {
-      position: fixed;
-      top: 0;
-      z-index: 9999;
-      width: 100%;
-      transition: background-color 0.3s ease;
-      background-color: #1A374D; /* default solid background */
-    }
-    
-    .site-nav.transparent {
-      background-color: transparent;
-    }
-    
+.site-nav {
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  transition: background-color 0.3s ease;
+    background-color: transparent;
+  width: 100%; }
+  
+  .site-nav.scrolled {
+    background-color: #1A374D; /* Your desired background color */
+  }
+  
 
 .site-nav {
   padding-top: 20px;
@@ -1820,4 +1819,3 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   color: white;
   font-weight: 600;
 }
-

@@ -339,16 +339,15 @@
   <script src="js/daterangepicker.js"></script>
   <script src="js/typed.js"></script>
   <script src="js/custom.js"></script>
-	<script>
-    window.addEventListener('scroll', function () {
-      const navbar = document.querySelector('.site-nav');
-      if (window.scrollY > 10) {
-          navbar.classList.remove('transparent');
-      } else {
-      navbar.classList.add('transparent');
-      
-      }
-    });
-  </script>
+  <script>
+		window.addEventListener('scroll', function () {
+		  const navbar = document.querySelector('.site-nav');
+		  if (window.scrollY > 10) {
+			navbar.classList.add('scrolled');
+		  } else {
+			navbar.classList.remove('scrolled');
+		  }
+		});
+	  </script>
 </body>
 </html>

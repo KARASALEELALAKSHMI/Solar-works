@@ -366,13 +366,12 @@ AOS.init(); // Start AOS animations
   window.addEventListener('scroll', function () {
     const navbar = document.querySelector('.site-nav');
     if (window.scrollY > 10) {
-        navbar.classList.remove('transparent');
+    navbar.classList.add('scrolled');
     } else {
-		navbar.classList.add('transparent');
-    
+    navbar.classList.remove('scrolled');
     }
   });
-</script>
+  </script>
 
 </body>
 
