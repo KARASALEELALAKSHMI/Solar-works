@@ -26,6 +26,34 @@
 	<link rel="stylesheet" href="css/style.css">
 
 	<title>VoltEco Dynamics Private Limited</title>
+	<style>
+	.promo-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent; /* Background stays visible */
+  z-index: 9999;
+  display: none; /* Hidden by default */
+}
+
+.promo-popup .promo-box {
+  animation: fadeInZoom 0.4s ease;
+}
+
+@keyframes fadeInZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+	</style>
 </head>
 
 <body>
@@ -590,7 +618,71 @@
 
   
 
+<!-- PM Surya Ghar Yojana Popup -->
+<div id="promo-popup" class="d-flex align-items-center justify-content-center"
+  style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); z-index: 1050; display: none;">
 
+  <div class="d-flex flex-row rounded-4 shadow-lg overflow-hidden border border-success border-2 bg-white position-relative"
+    style="width: 90%; max-width: 800px; height: auto;">
+
+    <!-- Top-Right Close Button -->
+    <button type="button" onclick="closePromo()" aria-label="Close"
+      style="position: absolute; top: 6px; right: 20px; background: transparent; border: none; font-size: 1.5rem; color: hsl(260, 33%, 98%);">
+      &times;
+    </button>
+
+    <!-- Left Side: Content -->
+    <div class="p-4" style="flex: 1;">
+      <div class="d-flex align-items-center mb-3">
+        <img src="images/VOLTECO LOGO.png" alt="Solar" style="width: 40px; height: 40px;" class="me-2">
+        <h5 class="fw-bold text-success mb-0">PM Surya Ghar Yojana</h5>
+      </div>
+      <p class="text-muted small mb-3">
+        ☀ Get up to ₹78,000 subsidy for installing rooftop solar panels. Power your home with clean, green energy.
+      </p>
+      <ul class="text-muted small mb-3 ps-3">
+        <li>✅ Save on electricity bills</li>
+        <li>✅ Up to ₹78,000 government subsidy</li>
+        <li>✅ Clean, renewable solar power</li>
+        <li>✅ Reduced carbon footprint</li>
+        <li>✅ Energy independence</li>
+      </ul>
+      <div class="d-flex justify-content-between">
+        <a href="contact.html" target="_blank" class="btn btn-success btn-sm px-3">Apply Now</a>
+        <button class="btn btn-primary btn-sm" onclick="closePromo()">Close</button>
+      </div>
+    </div>
+
+    <!-- Right Side: Image -->
+    <div style="flex: 1; background: url('images/solarpromo.jpg') center center / cover no-repeat;"></div>
+  </div>
+</div>
+
+<script>
+  function closePromo() {
+    const popup = document.getElementById("promo-popup");
+    popup.classList.remove("d-flex");
+    popup.classList.add("d-none");
+  }
+
+  window.onload = () => {
+    if (!sessionStorage.getItem("promoShown")) {
+      const popup = document.getElementById("promo-popup");
+      popup.classList.remove("d-none");
+      popup.classList.add("d-flex");
+      sessionStorage.setItem("promoShown", "true");
+    } else {
+      closePromo();
+    }
+  };
+</script>
+
+
+
+
+
+
+	
 </body>
 
 </html>
