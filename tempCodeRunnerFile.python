@@ -1,0 +1,42 @@
+from collections import Counter
+
+MOD = 10**9 + 7
+
+def mod_pow(x, y, mod):
+    res = 1
+    x %= mod
+    while y > 0:
+        if y % 2:
+            res = (res * x) % mod
+        x = (x * x) % mod
+        y //= 2
+    return res
+
+def xor_product_optimized(arr):
+    freq = Counter(arr)
+    unique_vals = sorted(freq.keys())
+    result = 1
+
+    for i in range(len(unique_vals)):
+        a = unique_vals[i]
+        # a == a case (only if freq >= 2)
+        count_same = freq[a] * (freq[a] - 1) // 2
+        if count_same > 0:
+            xor_val = a ^ a  # always 0
+            # XOR is 0 → skip, since product * 0 = 0
+            continue
+        
+        for j in range(i + 1, len(unique_vals)):
+            b = unique_vals[j]
+            count = freq[a] * freq[b]
+            xor_val = a ^ b
+            result = (result * mod_pow(xor_val, count, MOD)) % MOD
+
+    return result
+
+def main():
+    T = int(input())
+    for _ in range(T):
+        N = int(input())
+        A = list(map(int, input().split()))
+        print(xor_product_optimized(A))
