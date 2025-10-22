@@ -56,6 +56,7 @@
           <li class="active"><a href="index.html">Home</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#gallery_1">Gallery</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
@@ -71,120 +72,23 @@
 
 <!-- ===== Hero Section with Transparent Box and Breadcrumb Style ===== -->
 <section class="hero-section" style="background: url('images/End-to-End-Rooftop-bg.jpeg') center center / cover no-repeat; padding: 100px 0; position: relative;">
-  <div class="container">
-    <div class="row align-items-center">
-      
-      <!-- Left Side: Hero Content -->
-      <div class="col-lg-6 text-white">
-        <div class="hero-box" style="background-color: rgba(0, 0, 0, 0.5); padding: 40px; border-radius: 10px;">
-          <h1 class="display-4"><span class="highlight">End-to-End</span> Rooftop Installation</h1>
-          <p class="lead">Seamless solar integration from design to execution</p>
-          <nav class="breadcrumbs d-inline-block mt-3">
-            <ol class="list-inline mb-0">
-              <li class="list-inline-item">
-                <a href="index.html" class="breadcrumb-home text-white">Home</a>
-              </li>
-              <li class="list-inline-item text-white"> / </li>
-              <li class="list-inline-item text-white">
-                <a href="services.html" class="text-white">Our Services</a>
-              </li>
-            </ol>
-          </nav>
-        </div>
-      </div>
-
-      <!-- Right Side: Form -->
-      <div class="col-lg-6">
-        <div class="p-4" style="background-color:#32048875;  color: #fff; border-radius: 6px;">
-          
-          <!-- Heading -->
-          <h4 class="fw-bold mb-3">I am looking for</h4>
-
-          <!-- Radio Options -->
-          <div class="mb-3">
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="customerType" id="residential" checked>
-              <label class="form-check-label" for="residential">Residential</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="customerType" id="company">
-              <label class="form-check-label" for="company">Company/ Society/ Institution</label>
-            </div>
-          </div>
-
-          <!-- Small Note -->
-          <p class="mb-4" style="font-size: 14px;">*all are mandatory fields</p>
-
-          <!-- Form Fields Grid -->
-          <div class="row g-3">
-            <div class="col-md-6">
-              <input type="text" class="form-control border-0 py-3" placeholder="Name*" required>
-            </div>
-           
-            <div class="col-md-6">
-              <input type="text" class="form-control border-0 py-3" placeholder="10 digit Mobile*(+91)" required>
-            </div>
-
-            <div class="col-md-6">
-              <input type="email" class="form-control border-0 py-3" placeholder="Email*" required>
-            </div>
-            <div class="col-md-6">
-              <input type="number" class="form-control border-0 py-3" placeholder="Avg Monthly Electricity Bill (Rs)*" required>
-            </div>
-
-         <div class="col-md-6" id="companyField" style="display: none;">
-  <input type="text" class="form-control border-0 py-3" placeholder="Company/Society Name*" required>
-</div>
-           <div class="col-md-6" id="pincodeField">
-  <input type="text" class="form-control border-0 py-3" placeholder="6 digit Pincode*" required>
-</div>
-          </div>
-
-          <!-- Buttons -->
-          <div class="row mt-4">
-            <div class="col-md-6 d-grid">
-              <button class="btn btn-dark fw-bold py-3" style="background-color: #4f9dd8;;">GENERATE OTP</button>
-            </div>
-            <div class="col-md-6 d-grid">
-              <button class="btn btn-dark fw-bold py-3" style="background-color: #4f9dd8;;">📞 6309386203</button>
-            </div>
-          </div>
-
-        </div>
-
-        <script>
-  const residentialRadio = document.getElementById('residential');
-  const companyRadio = document.getElementById('company');
-  const companyField = document.getElementById('companyField');
-  const pincodeField = document.getElementById('pincodeField');
-
-  function toggleFields() {
-    if (companyRadio.checked) {
-      companyField.style.display = 'block';
-      companyField.querySelector('input').required = true;
-      pincodeField.classList.remove('col-md-12');
-      pincodeField.classList.add('col-md-6');
-    } else {
-      companyField.style.display = 'none';
-      companyField.querySelector('input').required = false;
-      pincodeField.classList.remove('col-md-6');
-      pincodeField.classList.add('col-md-12'); // make it double width
-    }
-  }
-
-  residentialRadio.addEventListener('change', toggleFields);
-  companyRadio.addEventListener('change', toggleFields);
-
-  // Initialize on page load
-  toggleFields();
-</script>
-      </div>
-
+  <div class="container text-center position-relative">
+    <div class="hero-box" style="background-color: rgba(0, 0, 0, 0.5); padding: 40px; border-radius: 10px;">
+      <h1 class="display-4"><span class="highlight">End-to-End</span> Rooftop Installation</h1>
+      <p class="lead">Seamless solar integration from design to execution</p>
+      <nav class="breadcrumbs d-inline-block mt-3">
+        <ol class="list-inline mb-0">
+          <li class="list-inline-item">
+            <a href="index.html" class="breadcrumb-home">Home</a>
+          </li>
+          <li class="list-inline-item text-white"> / </li>
+        <li class="list-inline-item text-white"><a href="services.html" style="color: white;">Our Services</a></li>
+        </ol>
+      </nav>
     </div>
   </div>
 </section>
 
-</section>
 
 
 
@@ -205,6 +109,7 @@
 </section>
 
 <!-- ===== Solar Calculator Section ===== -->
+ 
 <section class="solar-calculator py-5" style="background: url('images/solar-panels.jpg') center center / cover no-repeat;">
   <div class="container bg-white p-4 rounded shadow-lg">
 
@@ -220,7 +125,7 @@
       <!-- Left Panel: Inputs -->
       <div class="col-lg-5 d-flex flex-column">
         <div class="flex-grow-1">
-          <!-- Pincode -->
+          <!-- District -->
           <div class="mb-3">
             <label for="address" class="form-label fw-bold">Enter Your District</label>
             <input type="text" class="form-control" id="address" placeholder="e.g. Visakhapatnam">
@@ -229,7 +134,7 @@
           <!-- Phone -->
           <div class="mb-3">
             <label for="phone" class="form-label fw-bold">Enter Your Phone No</label>
-            <input type="text" class="form-control" id="phone" placeholder="e.g. +91 123">
+            <input type="text" class="form-control" id="phone" placeholder="e.g. +91 1234567890">
           </div>
 
           <!-- Power Supply Phase -->
@@ -253,8 +158,15 @@
 
           <!-- Monthly Bill -->
           <div class="mb-3">
-            <label for="bill" class="form-label fw-bold">Monthly Electricity Bill</label>
+            <label for="bill" class="form-label fw-bold">Monthly Electricity Bill (₹)</label>
             <input type="number" class="form-control" id="bill" value="1000">
+          </div>
+
+          <!-- Average Monthly Units -->
+          <div class="mb-3">
+            <label for="units" class="form-label fw-bold">Average Units Consumed per Month (kWh)</label>
+            <input type="number" class="form-control" id="units" placeholder="e.g. 350">
+            <small class="text-muted">Leave empty if unknown – it will calculate from your bill & tariff</small>
           </div>
 
           <!-- Rooftop Area -->
@@ -292,13 +204,13 @@
       </div>
     </div>
 
-    <!-- Results Section (Initially Hidden) -->
+    <!-- Results Section -->
     <div class="row" id="resultSection" style="display: none; min-height: 600px;">
       <div class="col-12 text-center d-flex flex-column justify-content-center">
         <h3 class="fw-bold text-success">Your Solar Estimate</h3>
-        <p><strong>System Size:</strong> <span id="systemSize"></span> kW</p>
-        <p><strong>Monthly Generation:</strong> <span id="monthlyGen"></span> kWh</p>
-        <p><strong>Estimated Savings:</strong> ₹<span id="savings"></span> /month</p>
+        <p><strong>System Size:</strong> <span id="systemSize">--</span> kW</p>
+        <p><strong>Monthly Generation:</strong> <span id="monthlyGen">--</span> kWh</p>
+        <p><strong>Estimated Savings:</strong> ₹<span id="savings">--</span> /month</p>
 
         <button class="btn btn-outline-secondary mt-3" onclick="backToForm()">🔙 Go Back</button>
       </div>
@@ -310,26 +222,39 @@
 <!-- JS -->
 <script>
 function showResults() {
-  let tariff = parseFloat(document.getElementById("tariff").value) || 7;
-  let bill = parseFloat(document.getElementById("bill").value) || 1000;
+  let tariff = parseFloat(document.getElementById("tariff").value) || 0;
+  let bill = parseFloat(document.getElementById("bill").value) || 0;
   let rooftop = parseFloat(document.getElementById("rooftop").value) || 0;
   let rooftopUnit = document.getElementById("rooftopUnit").value;
-  let load = parseFloat(document.getElementById("load").value) || 5;
+  let load = parseFloat(document.getElementById("load").value) || 0;
+  let userUnits = parseFloat(document.getElementById("units").value) || 0;
 
-  if (rooftopUnit === "sqm") rooftop = rooftop * 10.764;
+  if (rooftopUnit === "sqm") rooftop = rooftop * 10.764; // convert sqm to sqft
 
-  let unitsPerMonth = bill / tariff;
-  let systemByBill = (unitsPerMonth / 120);
-  let systemByArea = (rooftop / 120);
-  let systemByLoad = load;
+  // Average monthly units
+  let unitsPerMonth = userUnits > 0 ? userUnits : (tariff > 0 ? bill / tariff : 0);
 
-  let systemSize = Math.min(systemByBill, systemByArea, systemByLoad).toFixed(2);
-  let monthlyGen = (systemSize * 120).toFixed(0);
-  let savings = (monthlyGen * tariff).toFixed(0);
+  if (unitsPerMonth <= 0 || rooftop <= 0 || tariff <= 0 || load <= 0) {
+    alert("⚠️ Please enter valid values for units/bill, rooftop area, tariff, and load.");
+    return;
+  }
 
-  document.getElementById("systemSize").innerText = systemSize;
-  document.getElementById("monthlyGen").innerText = monthlyGen;
-  document.getElementById("savings").innerText = savings;
+  // System size based on different constraints
+  let systemByConsumption = unitsPerMonth / 120; // 1kW = 120kWh/month
+  let systemByArea = rooftop / 120;              // 120 sqft per 1kW
+  let systemByLoad = load;                       // as entered by user
+
+  // Smallest system that fits all constraints
+  let systemSize = Math.min(systemByConsumption, systemByArea, systemByLoad);
+
+  // Monthly generation and savings
+  let monthlyGen = systemSize * 120;           // kWh/month
+  let savings = monthlyGen * tariff;           // ₹/month
+
+  // Display results
+  document.getElementById("systemSize").innerText = systemSize.toFixed(2);
+  document.getElementById("monthlyGen").innerText = monthlyGen.toFixed(0);
+  document.getElementById("savings").innerText = savings.toFixed(0);
 
   document.getElementById("formSection").style.display = "none";
   document.getElementById("resultSection").style.display = "flex";
@@ -340,6 +265,8 @@ function backToForm() {
   document.getElementById("formSection").style.display = "flex";
 }
 </script>
+
+
 
 
 <!-- Styling fix for inputs -->
