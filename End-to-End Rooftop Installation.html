@@ -109,7 +109,6 @@
 </section>
 
 <!-- ===== Solar Calculator Section ===== -->
- 
 <section class="solar-calculator py-5" style="background: url('images/solar-panels.jpg') center center / cover no-repeat;">
   <div class="container bg-white p-4 rounded shadow-lg">
 
@@ -121,27 +120,34 @@
 
     <!-- Form Section -->
     <div class="row align-items-stretch" id="formSection">
-      
+
       <!-- Left Panel: Inputs -->
       <div class="col-lg-5 d-flex flex-column">
         <div class="flex-grow-1">
+
           <!-- District -->
           <div class="mb-3">
-            <label for="address" class="form-label fw-bold">Enter Your District</label>
-            <input type="text" class="form-control" id="address" placeholder="e.g. Visakhapatnam">
+            <label for="address" class="form-label fw-bold">
+              Enter Your District <span class="text-danger">*</span>
+            </label>
+            <input type="text" class="form-control" id="address" placeholder="e.g. Visakhapatnam" required>
           </div>
 
           <!-- Phone -->
           <div class="mb-3">
-            <label for="phone" class="form-label fw-bold">Enter Your Phone No</label>
-            <input type="text" class="form-control" id="phone" placeholder="e.g. +91 1234567890">
+            <label for="phone" class="form-label fw-bold">
+              Enter Your Phone No <span class="text-danger">*</span>
+            </label>
+            <input type="text" class="form-control" id="phone" placeholder="e.g. +91 9876543210" required>
           </div>
 
           <!-- Power Supply Phase -->
           <div class="mb-3">
-            <label class="fw-bold d-block">Power Supply Phase</label>
+            <label class="fw-bold d-block">
+              Power Supply Phase <span class="text-danger">*</span>
+            </label>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="phase" id="singlePhase" checked>
+              <input class="form-check-input" type="radio" name="phase" id="singlePhase" required>
               <label class="form-check-label" for="singlePhase">Single Phase</label>
             </div>
             <div class="form-check form-check-inline">
@@ -150,19 +156,30 @@
             </div>
           </div>
 
-          <!-- Tariff -->
+          <!-- Tariff Slab -->
           <div class="mb-3">
-            <label for="tariff" class="form-label fw-bold">Tariff Rate (₹/Unit)</label>
-            <input type="number" class="form-control" id="tariff" value="7">
+            <label for="tariff" class="form-label fw-bold">Select Tariff Slab</label>
+            <select class="form-select" id="tariff">
+              <option value="">Select One Option</option>
+              <option value="1.90">0–30 units: ₹1.90 per unit</option>
+              <option value="3.00">31–75 units: ₹3.00 per unit</option>
+              <option value="4.50">76–125 units: ₹4.50 per unit</option>
+              <option value="6.00">126–225 units: ₹6.00 per unit</option>
+              <option value="8.75">226–400 units: ₹8.75 per unit</option>
+              <option value="9.75">Above 400 units: ₹9.75 per unit</option>
+            </select>
+            <small class="text-muted">Leave empty if unknown – it will calculate from your bill</small>
           </div>
 
           <!-- Monthly Bill -->
           <div class="mb-3">
-            <label for="bill" class="form-label fw-bold">Monthly Electricity Bill (₹)</label>
-            <input type="number" class="form-control" id="bill" value="1000">
+            <label for="bill" class="form-label fw-bold">
+              Monthly Electricity Bill (₹) <span class="text-danger">*</span>
+            </label>
+            <input type="number" class="form-control" id="bill" placeholder="e.g. 1000" required>
           </div>
 
-          <!-- Average Monthly Units -->
+          <!-- Average Units -->
           <div class="mb-3">
             <label for="units" class="form-label fw-bold">Average Units Consumed per Month (kWh)</label>
             <input type="number" class="form-control" id="units" placeholder="e.g. 350">
@@ -173,7 +190,7 @@
           <div class="mb-3">
             <label class="fw-bold d-block">Available Roof Top Area</label>
             <div class="input-group">
-              <input type="number" class="form-control" id="rooftop" placeholder="1000">
+              <input type="number" class="form-control" id="rooftop" placeholder="e.g. 1000">
               <select class="form-select" id="rooftopUnit">
                 <option value="sqft">Sq.ft</option>
                 <option value="sqm">Sq.m</option>
@@ -185,7 +202,7 @@
           <!-- Sanction Load -->
           <div class="mb-3">
             <label for="load" class="form-label fw-bold">Sanction Load (kW)</label>
-            <input type="number" class="form-control" id="load" value="5">
+            <input type="number" class="form-control" id="load" placeholder="e.g. 3">
           </div>
         </div>
 
@@ -197,10 +214,7 @@
 
       <!-- Right Panel: Image -->
       <div class="col-lg-7 d-flex align-items-center">
-        <img src="images/solar-calculator.png" 
-             alt="Solar Rooftop" 
-             class="rounded w-100 h-100"
-             style="object-fit: cover; max-height: 600px;">
+        <img src="images/solar-calculator.png" alt="Solar Rooftop" class="rounded w-100 h-100" style="object-fit: cover; max-height: 600px;">
       </div>
     </div>
 
@@ -209,7 +223,7 @@
       <div class="col-12 text-center d-flex flex-column justify-content-center">
         <h3 class="fw-bold text-success">Your Solar Estimate</h3>
         <p><strong>System Size:</strong> <span id="systemSize">--</span> kW</p>
-        <p><strong>Monthly Generation:</strong> <span id="monthlyGen">--</span> kWh</p>
+        <p><strong>Monthly Generation:</strong> <span id="monthlyGen">--</span> Units</p>
         <p><strong>Estimated Savings:</strong> ₹<span id="savings">--</span> /month</p>
 
         <button class="btn btn-outline-secondary mt-3" onclick="backToForm()">🔙 Go Back</button>
@@ -219,41 +233,93 @@
   </div>
 </section>
 
-<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
+  (function () {
+    emailjs.init("9pJ0vo3MERTDImBZg"); // Replace with your EmailJS public key
+  })();
+</script>
+
+
+
+<!-- ===== JS Section ===== -->
+<script>
+
+// After your existing calculations but before showing results
+let phase = document.getElementById("singlePhase").checked ? "Single Phase" : "Three Phase";
+
+let templateParams = {
+  district: document.getElementById("address").value.trim(),
+  phone: document.getElementById("phone").value.trim(),
+  phase: phase,
+  bill: document.getElementById("bill").value,
+  units: document.getElementById("units").value || (bill / (parseFloat(document.getElementById("tariff").value) || 9.75)).toFixed(2),
+  rooftop: document.getElementById("rooftop").value,
+  load: document.getElementById("load").value
+};
+
+// Send email via EmailJS
+emailjs.send("service_gncucea", "template_k8jiz84", templateParams)
+  .then(function(response) {
+    console.log('Email sent successfully!', response.status, response.text);
+  }, function(error) {
+    console.error('Email sending failed:', error);
+  });
+
+
 function showResults() {
+  let district = document.getElementById("address").value.trim();
+  let phone = document.getElementById("phone").value.trim();
+  let bill = parseFloat(document.getElementById("bill").value);
   let tariff = parseFloat(document.getElementById("tariff").value) || 0;
-  let bill = parseFloat(document.getElementById("bill").value) || 0;
   let rooftop = parseFloat(document.getElementById("rooftop").value) || 0;
   let rooftopUnit = document.getElementById("rooftopUnit").value;
   let load = parseFloat(document.getElementById("load").value) || 0;
   let userUnits = parseFloat(document.getElementById("units").value) || 0;
+  let singlePhase = document.getElementById("singlePhase").checked;
+  let threePhase = document.getElementById("threePhase").checked;
 
-  if (rooftopUnit === "sqm") rooftop = rooftop * 10.764; // convert sqm to sqft
-
-  // Average monthly units
-  let unitsPerMonth = userUnits > 0 ? userUnits : (tariff > 0 ? bill / tariff : 0);
-
-  if (unitsPerMonth <= 0 || rooftop <= 0 || tariff <= 0 || load <= 0) {
-    alert("⚠️ Please enter valid values for units/bill, rooftop area, tariff, and load.");
+  // ✅ Validation for required fields
+  if (!district || !phone || (!singlePhase && !threePhase) || isNaN(bill) || bill <= 0) {
+    alert("⚠️ Please fill in all required fields");
     return;
   }
 
-  // System size based on different constraints
-  let systemByConsumption = unitsPerMonth / 120; // 1kW = 120kWh/month
-  let systemByArea = rooftop / 120;              // 120 sqft per 1kW
-  let systemByLoad = load;                       // as entered by user
+  // Convert sqm → sqft
+  if (rooftopUnit === "sqm") rooftop = rooftop * 10.764;
 
-  // Smallest system that fits all constraints
-  let systemSize = Math.min(systemByConsumption, systemByArea, systemByLoad);
+  // Units Calculation
+  let unitsPerMonth = 0;
+  if (tariff != 0 && userUnits == 0) {
+    unitsPerMonth = bill / tariff;
+  } else if (tariff == 0 && userUnits != 0) {
+    unitsPerMonth = userUnits;
+  } else if (tariff == 0 && userUnits == 0) {
+    unitsPerMonth = bill / 9.75; // average assumption
+  }
 
-  // Monthly generation and savings
-  let monthlyGen = systemSize * 120;           // kWh/month
-  let savings = monthlyGen * tariff;           // ₹/month
+  // System sizing
+  let systemSize = "";
+  let monthlyGen = "";
+  let savings = bill * 0.85; // 15% savings
+
+  if (unitsPerMonth <= 360) {
+    systemSize = "3";
+    monthlyGen = "360";
+  } else if (unitsPerMonth <= 600) {
+    systemSize = "5";
+    monthlyGen = "600";
+  } else if (unitsPerMonth <= 1200) {
+    systemSize = "10";
+    monthlyGen = "1200";
+  } else {
+    systemSize = "More than 10";
+    monthlyGen = "More than 1200";
+  }
 
   // Display results
-  document.getElementById("systemSize").innerText = systemSize.toFixed(2);
-  document.getElementById("monthlyGen").innerText = monthlyGen.toFixed(0);
+  document.getElementById("systemSize").innerText = systemSize;
+  document.getElementById("monthlyGen").innerText = monthlyGen;
   document.getElementById("savings").innerText = savings.toFixed(0);
 
   document.getElementById("formSection").style.display = "none";
@@ -265,6 +331,8 @@ function backToForm() {
   document.getElementById("formSection").style.display = "flex";
 }
 </script>
+
+
 
 
 
